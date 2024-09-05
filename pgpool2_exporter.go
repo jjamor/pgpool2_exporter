@@ -39,13 +39,10 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/common/promlog"
-	"github.com/alecthomas/kingpin/v2"
 )
 
 var (
-	ListenAddress = kingpin.Flag("web.listen-address", "Address on which to expose metrics and web interface.").Default(":9719").String()
-	MetricsPath   = kingpin.Flag("web.telemetry-path", "Path under which to expose metrics.").Default("/metrics").String()
-	Logger        = promlog.New(&promlog.Config{})
+	Logger = promlog.New(&promlog.Config{})
 )
 
 const (
